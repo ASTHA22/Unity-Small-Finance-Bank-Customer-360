@@ -171,7 +171,7 @@ export default function Dashboard() {
                   </div>
                   <div className="bg-white/80 border border-unity-gold-border/60 rounded-xl p-3.5 card-hover transform transition-all duration-300 hover:scale-102 shadow-xs">
                     <p className="text-unity-slate/50 text-[10px] font-bold uppercase mb-1">Monthly Income</p>
-                    <p className="text-xl font-extrabold text-unity-slate">₹{(mockCustomer.monthlyIncome / 100000).toFixed(2)}L</p>
+                    <p className="text-xl font-extrabold text-unity-slate">₹{(mockCustomer.monthlyIncome / 100000).toFixed(1)}L</p>
                   </div>
                   <div className="bg-white/80 border border-unity-gold-border/60 rounded-xl p-3.5 card-hover transform transition-all duration-300 hover:scale-102 shadow-xs">
                     <p className="text-unity-slate/50 text-[10px] font-bold uppercase mb-1">FOIR Headroom</p>
@@ -453,7 +453,7 @@ export default function Dashboard() {
                           <div>
                             <p className="text-unity-slate/50 font-semibold uppercase">Outstanding</p>
                             <p className="font-bold text-unity-slate">
-                              {product.outstanding > 0 ? `₹${(product.outstanding / 100000).toFixed(2)}L` : '₹0'}
+                              {product.outstanding > 0 ? `₹${(product.outstanding / 100000).toFixed(1)}L` : '₹0'}
                             </p>
                           </div>
                           <div>
@@ -817,11 +817,11 @@ export default function Dashboard() {
                           stroke="#2A3649" 
                           fontSize={10} 
                           fontWeight="bold" 
-                          tickFormatter={(value) => `₹${(value / 100000).toFixed(2)}L`}
+                          tickFormatter={(value) => `₹${(value / 100000).toFixed(1)}L`}
                           width={55}
                         />
                         <Tooltip 
-                          formatter={(value, name) => [`₹${(Number(value) / 100000).toFixed(2)}L`, name]}
+                          formatter={(value, name) => [`₹${(Number(value) / 100000).toFixed(1)}L`, name]}
                           contentStyle={{ background: '#2A3649', border: 'none', borderRadius: '8px', fontSize: '12px' }} 
                           itemStyle={{ color: '#fff' }}
                           labelStyle={{ color: '#fff', fontWeight: 'bold' }}
