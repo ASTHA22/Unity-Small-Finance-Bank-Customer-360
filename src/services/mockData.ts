@@ -66,7 +66,7 @@ export const customerExtended = {
     gender: 'Female',
     occupation: 'Salaried (VP - Technology)',
     maritalStatus: 'Single',
-    geography: 'Mumbai (Metro - Tier 1, Central/East)',
+    geography: 'Mumbai (Metro - Tier 1, Eastern Suburbs)',
     walletShare: '78%'
   },
   relationshipMetrics: {
