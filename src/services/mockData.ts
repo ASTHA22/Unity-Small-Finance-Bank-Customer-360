@@ -172,10 +172,14 @@ export const mockTriggers: Trigger[] = [
 ];
 
 export const spendingCategories = [
-  { name: 'Shopping & Lifestyle', percentage: 40, color: '#2A3649' },
-  { name: 'Food & Dining', percentage: 25, color: '#4A5B75' },
-  { name: 'Travel & Commute', percentage: 20, color: '#F5BE18' },
-  { name: 'Bills & Utilities', percentage: 15, color: '#D49D07' }
+  { name: 'Shopping', percentage: 20, color: '#4A5B75' },
+  { name: 'Travel', percentage: 15, color: '#2A3649' },
+  { name: 'Bills', percentage: 15, color: '#F5BE18' },
+  { name: 'Food', percentage: 15, color: '#10B981' },
+  { name: 'Lifestyle', percentage: 12, color: '#D49D07' },
+  { name: 'Services', percentage: 10, color: '#6B7C96' },
+  { name: 'Health', percentage: 8, color: '#E28743' },
+  { name: 'Entertainment', percentage: 5, color: '#06B6D4' }
 ];
 
 export const unityCorporateHighlights = {

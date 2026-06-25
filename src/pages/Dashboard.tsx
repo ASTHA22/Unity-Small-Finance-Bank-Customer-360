@@ -789,10 +789,32 @@ export default function Dashboard() {
                           data={spendingCategories}
                           cx="50%"
                           cy="50%"
-                          innerRadius={60}
-                          outerRadius={80}
-                          paddingAngle={5}
+                          innerRadius={50}
+                          outerRadius={70}
+                          paddingAngle={3}
                           dataKey="percentage"
+                          labelLine={false}
+                          label={({ cx, cy, midAngle, outerRadius, value }) => {
+                            const RADIAN = Math.PI / 180;
+                            const xCenter = cx || 0;
+                            const yCenter = cy || 0;
+                            const angle = midAngle || 0;
+                            const r = (outerRadius || 70) + 12;
+                            const lx = xCenter + r * Math.cos(-angle * RADIAN);
+                            const ly = yCenter + r * Math.sin(-angle * RADIAN);
+                            return (
+                              <text
+                                x={lx}
+                                y={ly}
+                                fill="#2A3649"
+                                textAnchor={lx > xCenter ? "start" : "end"}
+                                dominantBaseline="central"
+                                className="text-[10px] font-bold"
+                              >
+                                {value}%
+                              </text>
+                            );
+                          }}
                         >
                           {spendingCategories.map((entry, index) => (
                             <Cell key={`cell-${index}`} fill={entry.color} />
