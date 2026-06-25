@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ArrowLeft, TrendingUp, Award, CreditCard, Briefcase, User, Phone, Mail, MessageSquare, Clock, Globe, Users, FileText, Landmark, BarChart2, Activity, Heart, Shield } from 'lucide-react';
+import { ArrowLeft, TrendingUp, Award, CreditCard, Briefcase, User, Phone, Mail, MessageSquare, Clock, Globe, Users, FileText, Landmark, BarChart2, Activity, Heart, Shield, MapPin, Calendar } from 'lucide-react';
 import { mockCustomer, mockCreditProducts, mockTriggers, customerExtended, spendingCategories } from '../services/mockData';
 import logoImg from '../assets/logo.png';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend } from 'recharts';
@@ -201,7 +201,7 @@ export default function Dashboard() {
 
               <div className="grid lg:grid-cols-3 gap-6 mb-6 animate-slideInLeft items-stretch">
                 {/* Column 1 - Customer Profile */}
-                <div className="bg-white rounded-2xl shadow-sm p-5 card-hover border border-unity-gold-border/50 flex flex-col justify-between animate-slideInLeft">
+                <div className="bg-white rounded-2xl shadow-sm p-5 card-hover border border-unity-gold-border/50 flex flex-col justify-between h-full animate-slideInLeft">
                   <div>
                     <div className="flex items-start gap-4 mb-4">
                       <div className="w-12 h-12 bg-unity-gold/10 rounded-full flex items-center justify-center text-unity-gold-dark flex-shrink-0">
@@ -209,62 +209,69 @@ export default function Dashboard() {
                       </div>
                       <div className="flex-1">
                         <h2 className="text-lg font-extrabold text-unity-slate mb-3">Customer Profile</h2>
-                        <div className="grid grid-cols-2 gap-x-6 gap-y-4 text-xs">
-                          <div className="flex items-start gap-2">
-                            <User className="w-4 h-4 text-unity-gold-dark mt-0.5 flex-shrink-0" />
-                            <div>
-                              <p className="text-[10px] font-bold text-unity-slate/40 uppercase tracking-wider">Persona</p>
-                              <p className="font-extrabold text-unity-slate mt-0.5">{mockCustomer.segment}</p>
-                            </div>
+                        <div className="space-y-2.5 text-xs">
+                          <div className="flex justify-between items-center py-1.5 border-b border-slate-100">
+                            <span className="text-unity-slate/60 font-semibold flex items-center gap-2">
+                              <User className="w-3.5 h-3.5 text-unity-gold-dark" />
+                              Persona
+                            </span>
+                            <span className="font-extrabold text-unity-slate">{mockCustomer.segment}</span>
                           </div>
-                          <div className="flex items-start gap-2">
-                            <Award className="w-4 h-4 text-unity-gold-dark mt-0.5 flex-shrink-0" />
-                            <div>
-                              <p className="text-[10px] font-bold text-unity-slate/40 uppercase tracking-wider">Savings Tier</p>
-                              <p className="font-extrabold text-unity-gold-dark mt-0.5">{mockCustomer.tier}</p>
-                            </div>
+                          
+                          <div className="flex justify-between items-center py-1.5 border-b border-slate-100">
+                            <span className="text-unity-slate/60 font-semibold flex items-center gap-2">
+                              <Award className="w-3.5 h-3.5 text-unity-gold-dark" />
+                              Savings Tier
+                            </span>
+                            <span className="font-extrabold text-unity-gold-dark">{mockCustomer.tier}</span>
                           </div>
-                          <div className="flex items-start gap-2">
-                            <Clock className="w-4 h-4 text-unity-gold-dark mt-0.5 flex-shrink-0" />
-                            <div>
-                              <p className="text-[10px] font-bold text-unity-slate/40 uppercase tracking-wider">Age & Gender</p>
-                              <p className="font-extrabold text-unity-slate mt-0.5">{customerExtended.demographics.age} • {customerExtended.demographics.gender}</p>
-                            </div>
+
+                          <div className="flex justify-between items-center py-1.5 border-b border-slate-100">
+                            <span className="text-unity-slate/60 font-semibold flex items-center gap-2">
+                              <Calendar className="w-3.5 h-3.5 text-unity-gold-dark" />
+                              Age & Gender
+                            </span>
+                            <span className="font-extrabold text-unity-slate">{customerExtended.demographics.age} • {customerExtended.demographics.gender}</span>
                           </div>
-                          <div className="flex items-start gap-2">
-                            <Briefcase className="w-4 h-4 text-unity-gold-dark mt-0.5 flex-shrink-0" />
-                            <div>
-                              <p className="text-[10px] font-bold text-unity-slate/40 uppercase tracking-wider">Occupation</p>
-                              <p className="font-extrabold text-unity-slate mt-0.5 truncate max-w-[120px]">{customerExtended.demographics.occupation}</p>
-                            </div>
+
+                          <div className="flex justify-between items-center py-1.5 border-b border-slate-100">
+                            <span className="text-unity-slate/60 font-semibold flex items-center gap-2">
+                              <Briefcase className="w-3.5 h-3.5 text-unity-gold-dark" />
+                              Occupation
+                            </span>
+                            <span className="font-extrabold text-unity-slate truncate max-w-[180px]">{customerExtended.demographics.occupation}</span>
                           </div>
-                          <div className="flex items-start gap-2">
-                            <Heart className="w-4 h-4 text-unity-gold-dark mt-0.5 flex-shrink-0" />
-                            <div>
-                              <p className="text-[10px] font-bold text-unity-slate/40 uppercase tracking-wider">Marital Status</p>
-                              <p className="font-extrabold text-unity-slate mt-0.5">{customerExtended.demographics.maritalStatus}</p>
-                            </div>
+
+                          <div className="flex justify-between items-center py-1.5 border-b border-slate-100">
+                            <span className="text-unity-slate/60 font-semibold flex items-center gap-2">
+                              <Heart className="w-3.5 h-3.5 text-unity-gold-dark" />
+                              Marital Status
+                            </span>
+                            <span className="font-extrabold text-unity-slate">{customerExtended.demographics.maritalStatus}</span>
                           </div>
-                          <div className="flex items-start gap-2">
-                            <Globe className="w-4 h-4 text-unity-gold-dark mt-0.5 flex-shrink-0" />
-                            <div>
-                              <p className="text-[10px] font-bold text-unity-slate/40 uppercase tracking-wider">Geography</p>
-                              <p className="font-extrabold text-unity-slate mt-0.5 truncate max-w-[120px]">{customerExtended.demographics.geography}</p>
-                            </div>
+
+                          <div className="flex justify-between items-center py-1.5 border-b border-slate-100">
+                            <span className="text-unity-slate/60 font-semibold flex items-center gap-2">
+                              <MapPin className="w-3.5 h-3.5 text-unity-gold-dark" />
+                              Geography
+                            </span>
+                            <span className="font-extrabold text-unity-slate truncate max-w-[180px]">{customerExtended.demographics.geography}</span>
                           </div>
-                          <div className="flex items-start gap-2">
-                            <TrendingUp className="w-4 h-4 text-unity-gold-dark mt-0.5 flex-shrink-0" />
-                            <div>
-                              <p className="text-[10px] font-bold text-unity-slate/40 uppercase tracking-wider">Wallet Share</p>
-                              <p className="font-extrabold text-unity-slate mt-0.5">{customerExtended.demographics.walletShare}</p>
-                            </div>
+
+                          <div className="flex justify-between items-center py-1.5 border-b border-slate-100">
+                            <span className="text-unity-slate/60 font-semibold flex items-center gap-2">
+                              <TrendingUp className="w-3.5 h-3.5 text-unity-gold-dark" />
+                              Wallet Share
+                            </span>
+                            <span className="font-extrabold text-unity-slate">{customerExtended.demographics.walletShare}</span>
                           </div>
-                          <div className="flex items-start gap-2">
-                            <Shield className="w-4 h-4 text-emerald-600 mt-0.5 flex-shrink-0" />
-                            <div>
-                              <p className="text-[10px] font-bold text-unity-slate/40 uppercase tracking-wider">Risk Rating</p>
-                              <p className="font-extrabold text-emerald-600 mt-0.5">{customerExtended.riskProfile.category}</p>
-                            </div>
+
+                          <div className="flex justify-between items-center py-1.5">
+                            <span className="text-unity-slate/60 font-semibold flex items-center gap-2">
+                              <Shield className="w-3.5 h-3.5 text-emerald-600" />
+                              Risk Rating
+                            </span>
+                            <span className="font-extrabold text-emerald-600">{customerExtended.riskProfile.category}</span>
                           </div>
                         </div>
                       </div>
@@ -322,7 +329,7 @@ export default function Dashboard() {
                 </div>
 
                 {/* Column 2 - Engagement Momentum + Product Stack */}
-                <div className="flex flex-col gap-6 w-full animate-slideInLeft">
+                <div className="flex flex-col gap-6 w-full h-full animate-slideInLeft">
                   <div className="bg-white rounded-2xl shadow-sm p-5 border border-unity-gold-border/50 card-hover">
                     <h2 className="text-base font-extrabold text-unity-slate mb-3 uppercase tracking-wider">Engagement Momentum</h2>
                     <div className="grid grid-cols-3 gap-3">
@@ -391,7 +398,7 @@ export default function Dashboard() {
                 </div>
 
                 {/* Column 3 - Unity SFB Premium Card Flavor */}
-                <div className="bg-white rounded-2xl shadow-sm p-5 border border-unity-gold-border/50 card-hover flex flex-col justify-between animate-slideInLeft">
+                <div className="bg-white rounded-2xl shadow-sm p-5 border border-unity-gold-border/50 card-hover flex flex-col justify-between h-full animate-slideInLeft">
                   <div>
                     <div className="flex justify-between items-center mb-3">
                       <h3 className="font-extrabold text-unity-slate text-xs uppercase tracking-wider">Active Credit Card</h3>
