@@ -200,7 +200,7 @@ export default function Dashboard() {
               </div>
 
               <div className="grid lg:grid-cols-3 gap-6 mb-6 animate-slideInLeft items-stretch">
-                {/* Column 1 - Customer Profile */}
+                {/* Column 1 - Customer Profile & RM Details */}
                 <div className="bg-white rounded-2xl shadow-sm p-5 card-hover border border-unity-gold-border/50 flex flex-col justify-between h-full animate-slideInLeft">
                   <div>
                     <div className="flex items-start gap-4 mb-4">
@@ -210,90 +210,69 @@ export default function Dashboard() {
                       <div className="flex-1">
                         <h2 className="text-lg font-extrabold text-unity-slate mb-3">Customer Profile</h2>
                         <div className="space-y-2.5 text-xs">
-                          <div className="flex justify-between items-center py-1.5 border-b border-slate-100">
-                            <span className="text-unity-slate/60 font-semibold flex items-center gap-2">
-                              <User className="w-3.5 h-3.5 text-unity-gold-dark" />
+                          <div className="grid grid-cols-[125px_1fr] gap-2 items-center py-1.5 border-b border-slate-100">
+                            <span className="text-unity-slate/60 font-semibold flex items-center gap-2 flex-shrink-0">
+                              <User className="w-3.5 h-3.5 text-unity-gold-dark flex-shrink-0" />
                               Persona
                             </span>
-                            <span className="font-extrabold text-unity-slate">{mockCustomer.segment}</span>
+                            <span className="font-extrabold text-unity-slate text-right">{mockCustomer.segment}</span>
                           </div>
                           
-                          <div className="flex justify-between items-center py-1.5 border-b border-slate-100">
-                            <span className="text-unity-slate/60 font-semibold flex items-center gap-2">
-                              <Award className="w-3.5 h-3.5 text-unity-gold-dark" />
+                          <div className="grid grid-cols-[125px_1fr] gap-2 items-center py-1.5 border-b border-slate-100">
+                            <span className="text-unity-slate/60 font-semibold flex items-center gap-2 flex-shrink-0">
+                              <Award className="w-3.5 h-3.5 text-unity-gold-dark flex-shrink-0" />
                               Savings Tier
                             </span>
-                            <span className="font-extrabold text-unity-gold-dark">{mockCustomer.tier}</span>
+                            <span className="font-extrabold text-unity-gold-dark text-right">{mockCustomer.tier}</span>
                           </div>
 
-                          <div className="flex justify-between items-center py-1.5 border-b border-slate-100">
-                            <span className="text-unity-slate/60 font-semibold flex items-center gap-2">
-                              <Calendar className="w-3.5 h-3.5 text-unity-gold-dark" />
+                          <div className="grid grid-cols-[125px_1fr] gap-2 items-center py-1.5 border-b border-slate-100">
+                            <span className="text-unity-slate/60 font-semibold flex items-center gap-2 flex-shrink-0">
+                              <Calendar className="w-3.5 h-3.5 text-unity-gold-dark flex-shrink-0" />
                               Age & Gender
                             </span>
-                            <span className="font-extrabold text-unity-slate">{customerExtended.demographics.age} • {customerExtended.demographics.gender}</span>
+                            <span className="font-extrabold text-unity-slate text-right">{customerExtended.demographics.age} • {customerExtended.demographics.gender}</span>
                           </div>
 
-                          <div className="flex justify-between items-center py-1.5 border-b border-slate-100">
-                            <span className="text-unity-slate/60 font-semibold flex items-center gap-2">
-                              <Briefcase className="w-3.5 h-3.5 text-unity-gold-dark" />
+                          <div className="grid grid-cols-[125px_1fr] gap-2 items-center py-1.5 border-b border-slate-100">
+                            <span className="text-unity-slate/60 font-semibold flex items-center gap-2 flex-shrink-0">
+                              <Briefcase className="w-3.5 h-3.5 text-unity-gold-dark flex-shrink-0" />
                               Occupation
                             </span>
-                            <span className="font-extrabold text-unity-slate truncate max-w-[180px]">{customerExtended.demographics.occupation}</span>
+                            <span className="font-extrabold text-unity-slate text-right truncate" title={customerExtended.demographics.occupation}>{customerExtended.demographics.occupation}</span>
                           </div>
 
-                          <div className="flex justify-between items-center py-1.5 border-b border-slate-100">
-                            <span className="text-unity-slate/60 font-semibold flex items-center gap-2">
-                              <Heart className="w-3.5 h-3.5 text-unity-gold-dark" />
+                          <div className="grid grid-cols-[125px_1fr] gap-2 items-center py-1.5 border-b border-slate-100">
+                            <span className="text-unity-slate/60 font-semibold flex items-center gap-2 flex-shrink-0">
+                              <Heart className="w-3.5 h-3.5 text-unity-gold-dark flex-shrink-0" />
                               Marital Status
                             </span>
-                            <span className="font-extrabold text-unity-slate">{customerExtended.demographics.maritalStatus}</span>
+                            <span className="font-extrabold text-unity-slate text-right">{customerExtended.demographics.maritalStatus}</span>
                           </div>
 
-                          <div className="flex justify-between items-center py-1.5 border-b border-slate-100">
-                            <span className="text-unity-slate/60 font-semibold flex items-center gap-2">
-                              <MapPin className="w-3.5 h-3.5 text-unity-gold-dark" />
+                          <div className="grid grid-cols-[125px_1fr] gap-2 items-center py-1.5 border-b border-slate-100">
+                            <span className="text-unity-slate/60 font-semibold flex items-center gap-2 flex-shrink-0">
+                              <MapPin className="w-3.5 h-3.5 text-unity-gold-dark flex-shrink-0" />
                               Geography
                             </span>
-                            <span className="font-extrabold text-unity-slate truncate max-w-[180px]">{customerExtended.demographics.geography}</span>
+                            <span className="font-extrabold text-unity-slate text-right truncate" title={customerExtended.demographics.geography}>{customerExtended.demographics.geography}</span>
                           </div>
 
-                          <div className="flex justify-between items-center py-1.5 border-b border-slate-100">
-                            <span className="text-unity-slate/60 font-semibold flex items-center gap-2">
-                              <TrendingUp className="w-3.5 h-3.5 text-unity-gold-dark" />
+                          <div className="grid grid-cols-[125px_1fr] gap-2 items-center py-1.5 border-b border-slate-100">
+                            <span className="text-unity-slate/60 font-semibold flex items-center gap-2 flex-shrink-0">
+                              <TrendingUp className="w-3.5 h-3.5 text-unity-gold-dark flex-shrink-0" />
                               Wallet Share
                             </span>
-                            <span className="font-extrabold text-unity-slate">{customerExtended.demographics.walletShare}</span>
+                            <span className="font-extrabold text-unity-slate text-right">{customerExtended.demographics.walletShare}</span>
                           </div>
 
-                          <div className="flex justify-between items-center py-1.5">
-                            <span className="text-unity-slate/60 font-semibold flex items-center gap-2">
-                              <Shield className="w-3.5 h-3.5 text-emerald-600" />
+                          <div className="grid grid-cols-[125px_1fr] gap-2 items-center py-1.5">
+                            <span className="text-unity-slate/60 font-semibold flex items-center gap-2 flex-shrink-0">
+                              <Shield className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
                               Risk Rating
                             </span>
-                            <span className="font-extrabold text-emerald-600">{customerExtended.riskProfile.category}</span>
+                            <span className="font-extrabold text-emerald-600 text-right">{customerExtended.riskProfile.category}</span>
                           </div>
-                        </div>
-                      </div>
-                    </div>
-    
-                    <div className="border-t border-gray-100 pt-3">
-                      <h3 className="font-bold text-unity-slate/80 mb-3 text-xs uppercase tracking-wider">Balance Growth & AAB</h3>
-                      <div className="grid grid-cols-3 gap-3">
-                        <div className="bg-gradient-to-br from-amber-50/50 to-orange-50/20 border border-unity-gold-border rounded-lg p-2.5">
-                          <p className="text-[10px] font-bold text-unity-gold-dark mb-1">YTD Growth</p>
-                          <p className="text-xl font-extrabold text-unity-slate">{customerExtended.relationshipMetrics.balanceGrowth.ytd}</p>
-                          <p className="text-[9px] text-unity-slate/60">Savings Balance</p>
-                        </div>
-                        <div className="bg-gradient-to-br from-slate-50 to-[#FAF9F6] border border-slate-200 rounded-lg p-2.5">
-                          <p className="text-[10px] font-bold text-unity-slate/80 mb-1">MTD Growth</p>
-                          <p className="text-xl font-extrabold text-unity-slate">{customerExtended.relationshipMetrics.balanceGrowth.mtd}</p>
-                          <p className="text-[9px] text-unity-slate/60">Current Month</p>
-                        </div>
-                        <div className="bg-gradient-to-br from-amber-50/30 to-slate-50 border border-unity-gold-border rounded-lg p-2.5">
-                          <p className="text-[10px] font-bold text-unity-gold-dark mb-1">AAB (Annual)</p>
-                          <p className="text-xl font-extrabold text-unity-slate">{customerExtended.relationshipMetrics.balanceGrowth.aab}</p>
-                          <p className="text-[9px] text-unity-slate/60">Avg Balance</p>
                         </div>
                       </div>
                     </div>
@@ -303,22 +282,22 @@ export default function Dashboard() {
                     <h3 className="font-bold text-unity-slate/80 text-xs uppercase tracking-wider">RM & Branch Details</h3>
                     <div className="space-y-1 text-xs">
                       <div className="flex items-center gap-2">
-                        <Phone className="w-4 h-4 text-unity-slate/40" />
+                        <Phone className="w-4 h-4 text-unity-slate/40 flex-shrink-0" />
                         <span className="text-unity-slate/60">Phone:</span>
                         <span className="font-bold text-unity-slate">{mockCustomer.phone}</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Mail className="w-4 h-4 text-unity-slate/40" />
+                        <Mail className="w-4 h-4 text-unity-slate/40 flex-shrink-0" />
                         <span className="text-unity-slate/60">Email:</span>
                         <span className="font-bold text-unity-slate">{mockCustomer.email}</span>
                       </div>
                       <div className="flex items-center gap-2 border-t border-dashed border-gray-200 pt-1.5 mt-1.5">
-                        <Landmark className="w-4 h-4 text-unity-gold-dark" />
+                        <Landmark className="w-4 h-4 text-unity-gold-dark flex-shrink-0" />
                         <span className="text-unity-slate/60">Branch:</span>
                         <span className="font-bold text-unity-slate">{customerExtended.branch}</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Users className="w-4 h-4 text-unity-gold-dark" />
+                        <Users className="w-4 h-4 text-unity-gold-dark flex-shrink-0" />
                         <span className="text-unity-slate/60">Managed By:</span>
                         <span className="font-bold text-unity-slate">
                           RM {customerExtended.managedBy.name} ({customerExtended.managedBy.phone})
@@ -328,33 +307,26 @@ export default function Dashboard() {
                   </div>
                 </div>
 
-                {/* Column 2 - Engagement Momentum + Product Stack */}
+                {/* Column 2 - Balance Growth & AAB + Product Stack */}
                 <div className="flex flex-col gap-6 w-full h-full animate-slideInLeft">
+                  {/* Balance Growth & AAB Card */}
                   <div className="bg-white rounded-2xl shadow-sm p-5 border border-unity-gold-border/50 card-hover">
-                    <h2 className="text-base font-extrabold text-unity-slate mb-3 uppercase tracking-wider">Engagement Momentum</h2>
+                    <h3 className="font-extrabold text-unity-slate mb-3 text-xs uppercase tracking-wider">Balance Growth & AAB</h3>
                     <div className="grid grid-cols-3 gap-3">
-                      <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-2.5">
-                        <span className="text-[10px] font-bold text-emerald-950 block mb-1.5 leading-tight">Digital<br/>Transactions</span>
-                        <div className="w-full bg-emerald-200 rounded-full h-1 mt-1 mb-1.5">
-                          <div className="bg-emerald-600 h-1 rounded-full transition-all duration-500" style={{ width: `${digitalTransactions}%` }}></div>
-                        </div>
-                        <span className="text-sm font-extrabold text-emerald-700">{digitalTransactions}%</span>
+                      <div className="bg-gradient-to-br from-amber-50/50 to-orange-50/20 border border-unity-gold-border rounded-lg p-2.5">
+                        <p className="text-[10px] font-bold text-unity-gold-dark mb-1">YTD Growth</p>
+                        <p className="text-xl font-extrabold text-unity-slate">{customerExtended.relationshipMetrics.balanceGrowth.ytd}</p>
+                        <p className="text-[9px] text-unity-slate/60">Savings Balance</p>
                       </div>
-
-                      <div className="bg-amber-50 border border-unity-gold-border rounded-lg p-2.5">
-                        <span className="text-[10px] font-bold text-unity-slate block mb-1.5 leading-tight">PPC<br/>Ratio</span>
-                        <div className="w-full bg-amber-200 rounded-full h-1 mt-1 mb-1.5">
-                          <div className="bg-unity-gold-dark h-1 rounded-full transition-all duration-500" style={{ width: '100%' }}></div>
-                        </div>
-                        <span className="text-sm font-extrabold text-unity-gold-dark">3.0</span>
+                      <div className="bg-gradient-to-br from-slate-50 to-[#FAF9F6] border border-slate-200 rounded-lg p-2.5">
+                        <p className="text-[10px] font-bold text-unity-slate/80 mb-1">MTD Growth</p>
+                        <p className="text-xl font-extrabold text-unity-slate">{customerExtended.relationshipMetrics.balanceGrowth.mtd}</p>
+                        <p className="text-[9px] text-unity-slate/60">Current Month</p>
                       </div>
-
-                      <div className="bg-slate-50 border border-slate-200 rounded-lg p-2.5">
-                        <span className="text-[10px] font-bold text-unity-slate block mb-1.5 leading-tight">Branch<br/>Visits</span>
-                        <div className="w-full bg-slate-200 rounded-full h-1 mt-1 mb-1.5">
-                          <div className="bg-unity-slate-light h-1 rounded-full transition-all duration-500" style={{ width: '10%' }}></div>
-                        </div>
-                        <span className="text-sm font-extrabold text-unity-slate">Low</span>
+                      <div className="bg-gradient-to-br from-amber-50/30 to-slate-50 border border-unity-gold-border rounded-lg p-2.5">
+                        <p className="text-[10px] font-bold text-unity-gold-dark mb-1">AAB (Annual)</p>
+                        <p className="text-xl font-extrabold text-unity-slate">{customerExtended.relationshipMetrics.balanceGrowth.aab}</p>
+                        <p className="text-[9px] text-unity-slate/60">Avg Balance</p>
                       </div>
                     </div>
                   </div>
@@ -362,7 +334,7 @@ export default function Dashboard() {
                   {/* Product Stack Card */}
                   <div className="bg-white rounded-2xl shadow-sm p-5 border border-unity-gold-border/50 card-hover flex flex-col flex-1">
                     <h3 className="font-extrabold text-unity-slate mb-3 text-xs uppercase tracking-wider">Product Stack</h3>
-                    <div className="space-y-2 flex-1 flex flex-col justify-between">
+                    <div className="space-y-3 mt-1">
                       <div className="flex items-center gap-2.5 p-2.5 bg-gradient-to-r from-amber-50/50 to-white rounded-lg border border-unity-gold-border/60">
                         <div className="w-8 h-8 bg-unity-gold/15 border border-unity-gold-border rounded-lg flex items-center justify-center flex-shrink-0">
                           <span className="text-unity-gold-dark font-extrabold text-xs">SB</span>
@@ -397,105 +369,138 @@ export default function Dashboard() {
                   </div>
                 </div>
 
-                {/* Column 3 - Unity SFB Premium Card Flavor */}
-                <div className="bg-white rounded-2xl shadow-sm p-5 border border-unity-gold-border/50 card-hover flex flex-col justify-between h-full animate-slideInLeft">
-                  <div>
-                    <div className="flex justify-between items-center mb-3">
-                      <h3 className="font-extrabold text-unity-slate text-xs uppercase tracking-wider">Active Credit Card</h3>
-                      <span className="text-[10px] text-unity-slate/50 font-bold uppercase tracking-wider">RuPay Select Credit</span>
-                    </div>
-                    
-                    {/* Visual Card Mockup */}
-                    <div className="w-full aspect-[1.586/1] rounded-xl bg-gradient-to-br from-[#2A3649] via-[#3C4C63] to-[#1C2532] text-white p-4 flex flex-col justify-between shadow-md relative overflow-hidden border border-slate-700/50">
-                      <div className="absolute top-0 right-0 w-32 h-32 bg-radial from-[#F5BE18]/15 to-transparent rounded-full -mr-8 -mt-8 pointer-events-none"></div>
-                      <div className="absolute bottom-0 left-0 w-24 h-24 bg-radial from-[#F5BE18]/10 to-transparent rounded-full -ml-8 -mb-8 pointer-events-none"></div>
-                      
-                      <div className="flex justify-between items-start">
-                        <div>
-                          <p className="text-[9px] font-black tracking-wider text-unity-gold uppercase leading-none">Unity Small Finance Bank</p>
-                          <p className="text-[6px] text-white/50 tracking-widest uppercase leading-none mt-1">Pearl Premium Credit</p>
+                {/* Column 3 - Engagement Momentum + Active Credit Card */}
+                <div className="flex flex-col gap-6 w-full h-full animate-slideInLeft">
+                  {/* Engagement Momentum Card */}
+                  <div className="bg-white rounded-2xl shadow-sm p-5 border border-unity-gold-border/50 card-hover">
+                    <h2 className="text-base font-extrabold text-unity-slate mb-3 uppercase tracking-wider">Engagement Momentum</h2>
+                    <div className="grid grid-cols-3 gap-3">
+                      <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-2.5">
+                        <span className="text-[10px] font-bold text-emerald-950 block mb-1.5 leading-tight">Digital<br/>Transactions</span>
+                        <div className="w-full bg-emerald-200 rounded-full h-1 mt-1 mb-1.5">
+                          <div className="bg-emerald-600 h-1 rounded-full transition-all duration-500" style={{ width: `${digitalTransactions}%` }}></div>
                         </div>
-                        <div className="flex items-center gap-1 bg-white/10 px-1.5 py-0.5 rounded text-[8px] font-bold border border-white/10 text-unity-gold">
-                          <span className="w-1 h-1 rounded-full bg-emerald-500 animate-pulse"></span>
-                          ACTIVE
-                        </div>
+                        <span className="text-sm font-extrabold text-emerald-700">{digitalTransactions}%</span>
                       </div>
 
-                      {/* Card Chip & Contactless */}
-                      <div className="flex justify-between items-end mt-2">
-                        <div className="w-7 h-5 rounded bg-gradient-to-br from-yellow-300 via-amber-400 to-yellow-500 border border-amber-600/30 flex flex-col justify-between p-1">
-                          <div className="flex justify-between h-full">
-                            <div className="w-0.5 h-full bg-amber-900/20"></div>
-                            <div className="w-0.5 h-full bg-amber-900/20"></div>
-                            <div className="w-0.5 h-full bg-amber-900/20"></div>
-                          </div>
+                      <div className="bg-amber-50 border border-unity-gold-border rounded-lg p-2.5">
+                        <span className="text-[10px] font-bold text-unity-slate block mb-1.5 leading-tight">PPC<br/>Ratio</span>
+                        <div className="w-full bg-amber-200 rounded-full h-1 mt-1 mb-1.5">
+                          <div className="bg-unity-gold-dark h-1 rounded-full transition-all duration-500" style={{ width: '100%' }}></div>
                         </div>
-                        <svg className="w-4 h-4 text-white/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                          <path d="M5 17.5c2.5-2.5 2.5-6.5 0-9M7.5 20c3.5-3.5 3.5-9.5 0-13M10 22.5c4.5-4.5 4.5-12.5 0-17" strokeLinecap="round" />
-                        </svg>
+                        <span className="text-sm font-extrabold text-unity-gold-dark">3.0</span>
                       </div>
 
-                      {/* Card Number */}
-                      <div className="mt-3 font-mono text-sm tracking-widest text-white/95">
-                        4321 8901 2345 6789
-                      </div>
-
-                      {/* Cardholder & RuPay Platinum */}
-                      <div className="flex justify-between items-end mt-1">
-                        <div>
-                          <p className="text-[5px] text-white/40 uppercase tracking-widest">Card Holder</p>
-                          <p className="text-[10px] font-bold tracking-wide uppercase text-white/90">Astha Singh</p>
+                      <div className="bg-slate-50 border border-slate-200 rounded-lg p-2.5">
+                        <span className="text-[10px] font-bold text-unity-slate block mb-1.5 leading-tight">Branch<br/>Visits</span>
+                        <div className="w-full bg-slate-200 rounded-full h-1 mt-1 mb-1.5">
+                          <div className="bg-unity-slate-light h-1 rounded-full transition-all duration-500" style={{ width: '10%' }}></div>
                         </div>
-                        <div className="text-right">
-                          <span className="text-[9px] font-black italic tracking-wide text-white/90">RuPay</span>
-                          <span className="block text-[5.5px] font-bold tracking-wider uppercase text-unity-gold -mt-1">SELECT CREDIT</span>
-                        </div>
+                        <span className="text-sm font-extrabold text-unity-slate">Low</span>
                       </div>
                     </div>
                   </div>
 
-                  {/* Card Controls & Limits */}
-                  <div className="border-t border-gray-100 pt-4 mt-4 space-y-4 flex-1 flex flex-col justify-between">
+                  {/* Active Credit Card Card */}
+                  <div className="bg-white rounded-2xl shadow-sm p-5 border border-unity-gold-border/50 card-hover flex flex-col flex-1">
                     <div>
-                      <h4 className="text-[10px] font-bold text-unity-slate/50 uppercase tracking-wider mb-2">Card Limit & Spends</h4>
-                      <div className="space-y-1.5 text-xs">
-                        <div className="flex justify-between">
-                          <span className="text-unity-slate/60">Total Limit</span>
-                          <span className="font-bold text-unity-slate">₹1,50,000</span>
+                      <div className="flex justify-between items-center mb-3">
+                        <h3 className="font-extrabold text-unity-slate text-xs uppercase tracking-wider">Active Credit Card</h3>
+                        <span className="text-[10px] text-unity-slate/50 font-bold uppercase tracking-wider">RuPay Select Credit</span>
+                      </div>
+                      
+                      {/* Visual Card Mockup */}
+                      <div className="w-full aspect-[1.586/1] rounded-xl bg-gradient-to-br from-[#2A3649] via-[#3C4C63] to-[#1C2532] text-white p-4 flex flex-col justify-between shadow-md relative overflow-hidden border border-slate-700/50">
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-radial from-[#F5BE18]/15 to-transparent rounded-full -mr-8 -mt-8 pointer-events-none"></div>
+                        <div className="absolute bottom-0 left-0 w-24 h-24 bg-radial from-[#F5BE18]/10 to-transparent rounded-full -ml-8 -mb-8 pointer-events-none"></div>
+                        
+                        <div className="flex justify-between items-start">
+                          <div>
+                            <p className="text-[9px] font-black tracking-wider text-unity-gold uppercase leading-none">Unity Small Finance Bank</p>
+                            <p className="text-[6px] text-white/50 tracking-widest uppercase leading-none mt-1">Pearl Premium Credit</p>
+                          </div>
+                          <div className="flex items-center gap-1 bg-white/10 px-1.5 py-0.5 rounded text-[8px] font-bold border border-white/10 text-unity-gold">
+                            <span className="w-1 h-1 rounded-full bg-emerald-500 animate-pulse"></span>
+                            ACTIVE
+                          </div>
                         </div>
-                        <div className="flex justify-between">
-                          <span className="text-unity-slate/60">Utilized Limit</span>
-                          <span className="font-bold text-unity-slate">₹18,000</span>
+
+                        {/* Card Chip & Contactless */}
+                        <div className="flex justify-between items-end mt-2">
+                          <div className="w-7 h-5 rounded bg-gradient-to-br from-yellow-300 via-amber-400 to-yellow-500 border border-amber-600/30 flex flex-col justify-between p-1">
+                            <div className="flex justify-between h-full">
+                              <div className="w-0.5 h-full bg-amber-900/20"></div>
+                              <div className="w-0.5 h-full bg-amber-900/20"></div>
+                              <div className="w-0.5 h-full bg-amber-900/20"></div>
+                            </div>
+                          </div>
+                          <svg className="w-4 h-4 text-white/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                            <path d="M5 17.5c2.5-2.5 2.5-6.5 0-9M7.5 20c3.5-3.5 3.5-9.5 0-13M10 22.5c4.5-4.5 4.5-12.5 0-17" strokeLinecap="round" />
+                          </svg>
                         </div>
-                        <div className="w-full bg-slate-100 rounded-full h-1.5 mt-1">
-                          <div className="bg-unity-gold-dark h-1.5 rounded-full" style={{ width: '12%' }}></div>
+
+                        {/* Card Number */}
+                        <div className="mt-3 font-mono text-sm tracking-widest text-white/95">
+                          4321 8901 2345 6789
+                        </div>
+
+                        {/* Cardholder & RuPay Platinum */}
+                        <div className="flex justify-between items-end mt-1">
+                          <div>
+                            <p className="text-[5px] text-white/40 uppercase tracking-widest">Card Holder</p>
+                            <p className="text-[10px] font-bold tracking-wide uppercase text-white/90">Astha Singh</p>
+                          </div>
+                          <div className="text-right">
+                            <span className="text-[9px] font-black italic tracking-wide text-white/90">RuPay</span>
+                            <span className="block text-[5.5px] font-bold tracking-wider uppercase text-unity-gold -mt-1">SELECT CREDIT</span>
+                          </div>
                         </div>
                       </div>
                     </div>
 
-                    <div className="border-t border-gray-100/70 pt-3">
-                      <h4 className="text-[10px] font-bold text-unity-gold-dark uppercase tracking-wider mb-2 flex items-center gap-1">
-                        <Award className="w-3.5 h-3.5" />
-                        Pearl Card Privileges
-                      </h4>
-                      <ul className="space-y-1.5 text-[10px] text-unity-slate/80 font-medium">
-                        <li className="flex items-center gap-1.5">
-                          <span className="w-1.5 h-1.5 rounded-full bg-unity-gold-dark"></span>
-                          5x Reward Points on Lifestyle & Dining
-                        </li>
-                        <li className="flex items-center gap-1.5">
-                          <span className="w-1.5 h-1.5 rounded-full bg-unity-gold-dark"></span>
-                          2 Complimentary Airport Lounge Visits/Quarter
-                        </li>
-                        <li className="flex items-center gap-1.5">
-                          <span className="w-1.5 h-1.5 rounded-full bg-unity-gold-dark"></span>
-                          25% Discount on Locker rentals
-                        </li>
-                        <li className="flex items-center gap-1.5">
-                          <span className="w-1.5 h-1.5 rounded-full bg-unity-gold-dark"></span>
-                          Complimentary Personal Accident Cover
-                        </li>
-                      </ul>
+                    {/* Card Controls & Limits */}
+                    <div className="border-t border-gray-100 pt-4 mt-4 space-y-4">
+                      <div>
+                        <h4 className="text-[10px] font-bold text-unity-slate/50 uppercase tracking-wider mb-2">Card Limit & Spends</h4>
+                        <div className="space-y-1.5 text-xs">
+                          <div className="flex justify-between">
+                            <span className="text-unity-slate/60">Total Limit</span>
+                            <span className="font-bold text-unity-slate">₹1,50,000</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-unity-slate/60">Utilized Limit</span>
+                            <span className="font-bold text-unity-slate">₹18,000</span>
+                          </div>
+                          <div className="w-full bg-slate-100 rounded-full h-1.5 mt-1">
+                            <div className="bg-unity-gold-dark h-1.5 rounded-full" style={{ width: '12%' }}></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="border-t border-gray-100/70 pt-3">
+                        <h4 className="text-[10px] font-bold text-unity-gold-dark uppercase tracking-wider mb-2 flex items-center gap-1">
+                          <Award className="w-3.5 h-3.5" />
+                          Pearl Card Privileges
+                        </h4>
+                        <ul className="space-y-1.5 text-[10px] text-unity-slate/80 font-medium">
+                          <li className="flex items-center gap-1.5">
+                            <span className="w-1.5 h-1.5 rounded-full bg-unity-gold-dark"></span>
+                            5x Reward Points on Lifestyle & Dining
+                          </li>
+                          <li className="flex items-center gap-1.5">
+                            <span className="w-1.5 h-1.5 rounded-full bg-unity-gold-dark"></span>
+                            2 Complimentary Airport Lounge Visits/Quarter
+                          </li>
+                          <li className="flex items-center gap-1.5">
+                            <span className="w-1.5 h-1.5 rounded-full bg-unity-gold-dark"></span>
+                            25% Discount on Locker rentals
+                          </li>
+                          <li className="flex items-center gap-1.5">
+                            <span className="w-1.5 h-1.5 rounded-full bg-unity-gold-dark"></span>
+                            Complimentary Personal Accident Cover
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
