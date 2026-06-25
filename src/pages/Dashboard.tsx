@@ -357,7 +357,7 @@ export default function Dashboard() {
                           <p className="font-bold text-unity-slate text-xs">Savings Account (Pearl Program)</p>
                           <p className="text-[10px] text-unity-slate/70 truncate">3-in-1: Savings + Demat + Trading</p>
                         </div>
-                        <span className="font-bold text-unity-slate text-xs flex-shrink-0">₹4,25,000</span>
+                        <span className="font-bold text-unity-slate text-xs flex-shrink-0">₹3,80,000</span>
                       </div>
                       <div className="flex items-center gap-2.5 p-2.5 bg-gradient-to-r from-amber-50/70 to-white rounded-lg border border-unity-gold-border/80">
                         <div className="w-8 h-8 bg-unity-gold/20 border border-unity-gold-border rounded-lg flex items-center justify-center flex-shrink-0">
@@ -963,7 +963,7 @@ export default function Dashboard() {
                           <p className="font-bold text-unity-slate">Savings Account (Pearl Program)</p>
                           <p className="text-[10px] text-unity-slate/60">A/C: XXXX321456 • 3-in-1 Demat & Trading Linked</p>
                         </div>
-                        <span className="font-extrabold text-unity-slate">₹4,25,000</span>
+                        <span className="font-semibold text-unity-slate">₹3,80,000</span>
                       </div>
                       <div className="flex justify-between items-center p-3 bg-slate-50 border border-slate-200/50 rounded-lg text-xs">
                         <div>
